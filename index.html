@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Гурман — три варианта знака и дизайна</title>
+<title>Гурман — концепция бренда, знак, брендбук и упаковка</title>
+<meta name="description" content="«Гурман» — замороженные сырники и глазированные сырки из Нови-Сада. Концепция бренда, три варианта знака, брендбук и упаковка для магазина: пачка 500 г, сырки 50 г, мультипак, лоток-дисплей.">
 <meta name="description" content="Гурман: три концепции знака для линейки замороженных сырников и глазированных сырков. Производство Нови-Сад.">
 <link rel="icon" href="assets/logo-v1.svg">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Oswald:wght@400;500;600;700&family=Bitter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -42,6 +43,8 @@ nav a:hover{opacity:1;color:var(--cherry)}
 .btn:hover{transform:translateY(-1px)}
 
 /* критерии */
+.card{background:var(--paper);border:1px solid rgba(58,42,30,.12);border-radius:16px;padding:26px 28px}
+@media(max-width:600px){.card{padding:20px}}
 .crit{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px}
 .crit div{background:var(--paper);border:1px solid rgba(58,42,30,.12);border-radius:16px;padding:22px}
 .crit h4{font-size:19px;margin-bottom:8px}
@@ -172,6 +175,26 @@ img,svg,table{max-width:100%}
   .grid2,.grid3{gap:16px}
 }
 
+
+/* ── концепция и документы ── */
+.concept-lead{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:30px;align-items:start;margin-top:4px}
+.concept-lead p{margin:0;font-size:17.5px;color:#5C4B3C}
+.concept-lead .lead{font-size:20px;color:var(--cocoa)}
+.docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.docs a{display:flex;flex-direction:column;gap:9px;text-decoration:none;background:var(--paper);border:2px solid rgba(58,42,30,.14);border-radius:18px;padding:24px;transition:.15s}
+.docs a:hover{border-color:var(--cherry)}
+.docs b{font-family:var(--mono);font-weight:800;font-size:19px;line-height:1.15}
+.docs span{font-size:14.5px;color:#5C4B3C}
+.docs i{font-style:normal;font-family:var(--cond);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cherry);margin-top:auto;padding-top:6px}
+.sub-h{font-size:clamp(22px,3vw,32px);margin:42px 0 0}
+@media(max-width:980px){.concept-lead,.docs{grid-template-columns:minmax(0,1fr)}}
+
+.tick{list-style:none;margin:0;padding:0}
+.tick li{position:relative;padding-left:26px;margin-bottom:11px;font-size:15.5px;color:#5C4B3C}
+.tick li:before{content:'';position:absolute;left:0;top:8px;width:11px;height:11px;border-radius:50%;background:var(--butter);border:1.5px solid var(--cocoa)}
+
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -180,9 +203,10 @@ img,svg,table{max-width:100%}
   <div class="wrap hd">
     <img src="assets/wordmark-gurman.svg" alt="Гурман">
     <nav>
+      <a href="#concept">Концепция</a>
       <a href="#variants">Варианты</a>
-      <a href="#distance">Дистанция</a>
       <a href="#compare">Сравнение</a>
+      <a href="#review">Правки</a>
       <a href="brandbook.html">Брендбук</a>
       <a href="packaging.html">Упаковка</a>
     </nav>
@@ -195,15 +219,39 @@ img,svg,table{max-width:100%}
   <p>Наш продукт держится на одной форме: круг — у сырника и у медальона сырка. Поэтому знак собран из крупных форм — вишнёвая плашка во всю ширину пачки и буква <b>Г</b> в масляном кольце. Такое видно в морозилке, где всё серо-белое, и одинаково работает на пачке 500 г и на обёртке 50 г.</p>
   <p style="margin-top:14px">Три направления ниже отличаются только рисунком одной и той же идеи. Правила у всех общие: <b>только крупные формы</b>, ничего мелкого и дробного, один знак на обе линейки, сохранённая палитра — и везде просто <b>Гурман</b>, без приписок.</p>
   <div class="cue">
-    <a class="btn solid" href="#variants">Смотреть три варианта</a>
-    <a class="btn" href="brandbook.html">Открыть брендбук</a>
+    <a class="btn solid" href="#concept">Концепция бренда</a>
+    <a class="btn" href="#variants">Три варианта знака</a>
+    <a class="btn" href="brandbook.html">Брендбук</a>
     <a class="btn" href="packaging.html">Упаковка для магазина</a>
   </div>
 </div>
 
+
+<section id="concept">
+  <div class="wrap">
+    <div class="sec-h"><div class="num">01</div><h2>Концепция бренда</h2></div>
+    <div class="concept-lead">
+      <p class="lead"><b>«Гурман»</b> — замороженные сырники и глазированные сырки из Нови-Сада. Категория сегодня фактически без дизайна: соседи продают россыпь в пакете или пачку без имени, и покупатель выбирает по цене, потому что выбирать больше не из чего. Мы ставим на полку продукт с именем, лицом и узнаваемой полкой.</p>
+      <p>Вся айдентика держится на одной идее: <b>форма продукта = форма знака</b>. Сырник круглый, сырок — круглый медальон под глазурью, поэтому знак — буква <b>Г</b> в вишнёвом круге с масляным кольцом. Три крупные формы, ни одной мелкой детали: он читается с пяти метров, работает и на пачке 500 г, и на обёртке 50 г, печатается в четыре краски и не рассыпается при уменьшении.</p>
+    </div>
+    <div class="crit" style="margin-top:30px">
+      <div><h4>Знак</h4><p>Буква «Г» в вишнёвом круге и масляное кольцо вокруг. Держится от 16 px на ценнике до вывески — там, где сложные знаки превращаются в пятно.</p></div>
+      <div><h4>Палитра</h4><p>Вишня #B3241F, масло #E8B33C, какао #3A2A1E, крафт #C6A275, крем #FBF4E4. Четыре печатные краски, без растра и градиентов: ровно ложится и на картон, и на плёнку.</p></div>
+      <div><h4>Типографика</h4><p>Unbounded 900 — имя «Гурман» и слово на упаковке. Oswald — подписи и этикетки капсом. Bitter — состав и всё, что читают мелко.</p></div>
+      <div><h4>Линейка</h4><p>Сырники 500 г / 10 шт — круглые. Сырки глазированные 50 г — шоколад, кокос, ваниль: вкус кодирует цветная панель, знак не меняется. Мультипак 5 × 50 г = 250 г.</p></div>
+    </div>
+    <h3 class="sub-h">Документы: что смотреть</h3>
+    <div class="docs">
+      <a href="#variants"><b>Три направления знака</b><span>Три варианта знака и дизайна упаковки: состояния знака, вид на пачке и на сырках, симуляция полки, тест на дистанции 120 → 16 px, сравнение. Здесь же — файлы знаков в SVG, буквы в кривых.</span><i>Смотреть варианты →</i></a>
+      <a href="brandbook.html"><b>Брендбук</b><span>Идея знака и объяснение, почему он подходит продукту. Построение и охранное поле, версии знака с минимальными размерами, цвет в HEX/RGB/CMYK, типографика, тон и язык, упаковка линейки, носители, правила «нельзя» и файлы.</span><i>Открыть брендбук →</i></a>
+      <a href="packaging.html"><b>Упаковка и дизайн для магазина</b><span>Пачка сырников 500 г: лицо, оборот со всеми обязательными блоками и развёртка для типографии. Флоу-пак сырка 50 г в трёх вкусах, мультипак 250 г, лоток-дисплей, спецификация печати и чек-лист данных.</span><i>Открыть упаковку →</i></a>
+    </div>
+  </div>
+</section>
+
 <section id="rules">
   <div class="wrap">
-    <div class="sec-h"><div class="num">01</div><h2>По каким правилам делали</h2></div>
+    <div class="sec-h"><div class="num">02</div><h2>По каким правилам делали</h2></div>
     <div class="crit">
       <div><h4>Крупные формы</h4><p>Один-два больших элемента, ни одной крошки. Знак должен собираться в силуэт с 5 метров.</p></div>
       <div><h4>Две линейки, один знак</h4><p>Сырники (круглые, 500 г) и сырки (прямоугольные, глазированные) выглядят как семья, а не как два разных бренда.</p></div>
@@ -215,7 +263,7 @@ img,svg,table{max-width:100%}
 
 <section id="variants">
   <div class="wrap">
-    <div class="sec-h"><div class="num">02</div><h2>Три варианта знака и дизайна</h2></div>
+    <div class="sec-h"><div class="num">03</div><h2>Три варианта знака и дизайна</h2></div>
 
     <!-- ===== ВАРИАНТ 1 ===== -->
     <article class="variant">
@@ -427,7 +475,7 @@ img,svg,table{max-width:100%}
 
 <section id="distance">
   <div class="wrap">
-    <div class="sec-h"><div class="num">03</div><h2>Тест на дистанцию</h2></div>
+    <div class="sec-h"><div class="num">04</div><h2>Тест на дистанцию</h2></div>
     <p style="max-width:760px;margin-bottom:24px">Нижняя строка в каждом блоке — то, как знак выглядит <b>с 3–5 метров</b>. Знак должен читаться уже на 24 px: иначе на дальней полке морозилки останется цветное пятно без бренда.</p>
     <div class="dist">
       <div class="dist-row">
@@ -466,7 +514,7 @@ img,svg,table{max-width:100%}
 
 <section id="compare">
   <div class="wrap">
-    <div class="sec-h"><div class="num">04</div><h2>Сравнение</h2></div>
+    <div class="sec-h"><div class="num">05</div><h2>Сравнение</h2></div>
     <table>
       <thead><tr><th>Критерий</th><th>1 · Монограмма</th><th>2 · Глазурь</th><th>3 · Клеймо</th></tr></thead>
       <tbody>
@@ -492,7 +540,7 @@ img,svg,table{max-width:100%}
       <a class="btn solid" href="brandbook.html">Открыть брендбук →</a>
     </div>
 
-    <div class="sec-h" style="margin-top:56px"><div class="num">05</div><h2>Файлы знаков</h2></div>
+    <div class="sec-h" style="margin-top:56px"><div class="num">06</div><h2>Файлы знаков</h2></div>
     <p style="max-width:700px">Все знаки — векторные (SVG): буквы и слова переведены в кривые, шрифты не нужны. Скачай и посмотри на реальных носителях и в печати.</p>
     <dl class="files">
       <a href="assets/logo-v1.svg">Основной знак<span>logo-v1.svg</span></a>
@@ -511,10 +559,52 @@ img,svg,table{max-width:100%}
   </div>
 </section>
 
+
+<section id="review">
+  <div class="wrap">
+    <div class="sec-h"><div class="num">07</div><h2>Проверка и правки</h2></div>
+    <div class="grid2">
+      <div class="card">
+        <div class="label">Что уже готово</div>
+        <ul class="tick" style="margin-top:14px">
+          <li>Знак в кривых — 12 файлов SVG: основной, инверсия, моно, контур, лок-апы и знаки всех трёх направлений.</li>
+          <li>Брендбук — 10 разделов: идея, построение, версии знака, цвет, типографика, тон, упаковка, носители, правила, файлы.</li>
+          <li>Упаковка для магазина — пачка 500 г (лицо, оборот, развёртка), флоу-пак 50 г в трёх вкусах, мультипак 250 г, лоток-дисплей, спецификация печати.</li>
+          <li>Сайт проверен на живом адресе: десктоп и телефон (390 и 360 px), битых ссылок и картинок нет, все шрифты на месте.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label">Что ждём от производства</div>
+        <ul class="tick" style="margin-top:14px">
+          <li>Состав по порядку и КБЖУ на 100 г — вставляем в оборот пачки и обёртки.</li>
+          <li>Срок годности и условия хранения — по вашему ТУ.</li>
+          <li>Наименование производства, ПИБ, матични број, адрес.</li>
+          <li>EAN-13 на каждый вкус: три номера GS1.</li>
+          <li>Телефон и Telegram — для оборота упаковки и раздела заказа.</li>
+          <li>Решение по мультипаку: делаем коробку 250 г или пока только поштучные сырки.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px;border:2px solid var(--cherry)">
+      <div class="label" style="color:var(--cherry)">Есть уточнения или предложения?</div>
+      <p style="margin-top:10px;font-size:19px">Проверьте макеты и напишите, что поправить — внесём. Меняется что угодно: знак, надписи, цвета, состав, форматы упаковки. Правки по знаку и текстам — один день, пересборка упаковки — один день. Финальные файлы уходят в печать с вылетами и шрифтами в кривых.</p>
+      <div class="cue" style="margin-top:16px">
+        <a class="btn solid" href="packaging.html">Открыть упаковку</a>
+        <a class="btn" href="brandbook.html">Открыть брендбук</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap fg">
     <div>Гурман · сырники и сырки глазированные</div>
     <div>Производство Нови-Сад · 2026</div>
+  </div>
+  <div class="wrap" style="display:flex;gap:20px;flex-wrap:wrap;padding-top:16px;font-family:var(--cond);font-size:13px;letter-spacing:.12em;text-transform:uppercase">
+    <a href="index.html">Три направления знака</a>
+    <a href="brandbook.html">Брендбук</a>
+    <a href="packaging.html">Упаковка для магазина</a>
   </div>
 </footer>
 </body>
