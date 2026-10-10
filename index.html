@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Гурман — три варианта знака и дизайна</title>
+<meta name="description" content="Гурман: три концепции знака для линейки замороженных сырников и глазированных сырков. Производство Нови-Сад.">
+<link rel="icon" href="assets/logo-v1.svg">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Oswald:wght@400;500;600;700&family=Bitter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cherry:#B3241F; --cherry-d:#7E0A1C; --butter:#E8B33C; --butter-d:#B07F10;
+  --cocoa:#3A2A1E; --cream:#FBF4E4; --paper:#FFFDF7; --kraft:#C6A275; --ink:#241A14;
+  --mono:'Unbounded',system-ui,sans-serif; --cond:'Oswald',sans-serif; --serif:'Bitter',Georgia,serif;
+  --sh:0 10px 30px rgba(60,40,20,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+h1,h2,h3,h4{font-family:var(--mono);font-weight:900;line-height:1.03;letter-spacing:-.015em}
+a{color:var(--cherry)}
+.label{font-family:var(--cond);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8A7660}
+.lbl-cherry{color:var(--cherry)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,244,228,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(58,42,30,.12)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.hd img{height:30px;display:block}
+nav{display:flex;gap:26px;font-family:var(--cond);font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+nav a{color:var(--cocoa);text-decoration:none;opacity:.75}
+nav a:hover{opacity:1;color:var(--cherry)}
+
+/* hero */
+.hero{padding:78px 0 54px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(40px,6.4vw,86px)}
+.hero h1 em{font-style:normal;color:var(--cherry)}
+.hero p{max-width:660px;margin-top:22px;font-size:19px}
+.hero .cue{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:var(--cond);font-size:13px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border-radius:999px;border:2px solid var(--cherry);color:var(--cherry);display:inline-block}
+.btn.solid{background:var(--cherry);color:var(--cream)}
+.btn:hover{transform:translateY(-1px)}
+
+/* критерии */
+.crit{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px}
+.crit div{background:var(--paper);border:1px solid rgba(58,42,30,.12);border-radius:16px;padding:22px}
+.crit h4{font-size:19px;margin-bottom:8px}
+.crit p{font-size:15px;color:#5C4B3C}
+
+section{padding:64px 0;border-top:1px solid rgba(58,42,30,.10);scroll-margin-top:86px}
+.sec-h{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:30px}
+.sec-h h2{font-size:clamp(30px,4.2vw,52px)}
+.sec-h .num{font-family:var(--cond);font-size:15px;letter-spacing:.3em;color:var(--butter-d)}
+
+/* вариант */
+.variant{background:var(--paper);border:1px solid rgba(58,42,30,.12);border-radius:24px;padding:36px;box-shadow:var(--sh);margin-bottom:30px}
+.v-head{display:flex;align-items:flex-start;gap:26px;flex-wrap:wrap;justify-content:space-between}
+.v-head h3{font-size:clamp(26px,3.4vw,42px)}
+.v-head .tag{font-family:var(--cond);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#8A7660;margin-top:10px}
+.v-badge{font-family:var(--mono);font-weight:900;font-size:13px;letter-spacing:.1em;background:var(--cherry);color:var(--cream);border-radius:999px;padding:9px 16px}
+.v-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;margin-top:30px;align-items:start}
+.states{display:flex;gap:16px;flex-wrap:wrap}
+.states figure{width:104px;text-align:center}
+.states img{width:88px;display:block;margin:0 auto 10px}
+.states figcaption{font-family:var(--cond);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8A7660}
+.states .onDark{background:var(--cocoa);border-radius:14px;padding:10px 8px 8px}
+.states .onDark figcaption{color:#CBBCA9}
+
+.pros{list-style:none;margin-top:4px}
+.pros li{padding-left:30px;position:relative;margin-bottom:12px;font-size:16px}
+.pros li::before{content:'';position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--butter)}
+.pros li.minus::before{background:var(--cherry)}
+.pros b{font-family:var(--cond);font-weight:600;letter-spacing:.02em}
+
+/* пачка */
+.mocks{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;margin-top:26px}
+.pack{width:250px;height:370px;border-radius:16px;background:var(--paper);border:2px solid var(--cocoa);overflow:hidden;display:flex;flex-direction:column;position:relative;flex:none}
+.pack .top{height:150px;background:var(--cherry);display:flex;align-items:center;justify-content:center}
+.pack .top img{width:96px}
+.pack .band{height:12px;background:var(--butter);border-top:2px solid var(--cocoa);border-bottom:2px solid var(--cocoa)}
+.pack .badge{position:absolute;top:16px;right:16px;width:62px;height:62px;border-radius:50%;background:var(--cream);border:2px solid var(--cocoa);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--cond);font-weight:600;font-size:12px;line-height:1.15}
+.pack .body{padding:20px 20px 0;flex:1}
+.pack .name{font-family:var(--mono);font-weight:900;font-size:34px;letter-spacing:-.02em;line-height:.95}
+.pack .line{font-family:var(--cond);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cherry);margin-top:8px}
+.pack .txt{font-family:var(--serif);font-size:13px;color:#5C4B3C;margin-top:12px;line-height:1.45}
+.pack .foot{display:flex;justify-content:space-between;font-family:var(--cond);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7660;padding:12px 20px;border-top:1px solid rgba(58,42,30,.15)}
+
+/* сырки */
+.bars{display:flex;flex-direction:column;gap:14px;flex:1;min-width:320px}
+.bar{display:flex;border:2px solid var(--cocoa);border-radius:12px;overflow:hidden;background:var(--paper);height:86px}
+.bar .bl{flex:1;padding:14px 18px;display:flex;flex-direction:column;justify-content:center}
+.bar .bn{font-family:var(--mono);font-weight:900;font-size:20px;letter-spacing:-.01em}
+.bar .bf{font-family:var(--cond);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7660;margin-top:4px}
+.bar .bp{width:92px;display:flex;align-items:center;justify-content:center;border-left:2px solid var(--cocoa)}
+.bar .bp svg{width:40px;height:40px;display:block}
+.bar.choc .bp{background:var(--cocoa)} .bar.choc .bp svg{color:var(--cream)}
+.bar.coco .bp{background:var(--kraft)} .bar.coco .bp svg{color:var(--paper)}
+.bar.van .bp{background:var(--butter)} .bar.van .bp svg{color:var(--cocoa)}
+.bar img.mk{width:30px;margin-right:10px}
+.bar .bl-row{display:flex;align-items:center}
+
+/* полка */
+.shelf{background:linear-gradient(180deg,#DCD4C6,#C9C0B1);border-radius:20px;padding:36px 30px 44px;display:flex;gap:22px;align-items:flex-end;justify-content:center;position:relative;overflow:hidden;margin-top:26px;min-height:330px}
+.shelf::after{content:'';position:absolute;left:0;right:0;bottom:0;height:14px;background:#B4AB9C;border-top:2px solid #9A9182}
+.comp{width:130px;height:220px;border-radius:8px;background:repeating-linear-gradient(180deg,#E7E4DE,#E7E4DE 22px,#DCD8D2 22px,#DCD8D2 44px);border:1px solid #BEB9B2}
+.shelf .pack{width:190px;height:280px}
+.shelf .pack .top{height:110px}.shelf .pack .top img{width:70px}
+.shelf .pack .name{font-size:26px}.shelf .pack .txt{display:none}
+.shelf .pack .badge{width:50px;height:50px;font-size:10px}
+.shelf .bars{min-width:200px}
+.shelf .bar{height:62px;width:210px}
+.shelf .bar .bn{font-size:15px}.shelf .bar .bf{font-size:10px;margin-top:2px}
+.shelf .bar .bp{width:64px}.shelf .bar .bp svg{width:28px;height:28px}
+.shelf .bar img.mk{width:20px;margin-right:6px}
+
+/* дистанция */
+.dist{background:var(--paper);border:1px solid rgba(58,42,30,.12);border-radius:20px;padding:30px;box-shadow:var(--sh)}
+.dist-row{display:grid;grid-template-columns:1fr 2.4fr;gap:20px;align-items:center;padding:18px 0;border-top:1px dashed rgba(58,42,30,.18)}
+.dist-row:first-child{border-top:0}
+.dist-row .who{font-family:var(--cond);font-weight:600;font-size:15px;letter-spacing:.06em}
+.dist-row .who small{display:block;font-family:var(--serif);font-weight:400;letter-spacing:0;text-transform:none;color:#7A6656;font-size:13px;margin-top:4px}
+.sizes{display:flex;align-items:flex-end;gap:26px}
+.sizes figure{display:flex;flex-direction:column;align-items:center;gap:8px}
+.sizes figcaption{font-family:var(--cond);font-size:10px;letter-spacing:.12em;color:#9A8878}
+
+/* таблица */
+table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:18px;overflow:hidden;box-shadow:var(--sh);font-size:15px}
+th,td{padding:16px 18px;text-align:left;border-bottom:1px solid rgba(58,42,30,.10);vertical-align:top}
+th{font-family:var(--cond);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A7660;background:#F6EEDD}
+td b{font-family:var(--cond);font-weight:600}
+tr:last-child td{border-bottom:0}
+
+/* финал */
+.cta{background:var(--cocoa);color:var(--cream);border-radius:24px;padding:52px 44px;display:flex;gap:34px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cta h2{font-size:clamp(26px,3.6vw,44px);max-width:620px}
+.cta p{color:#CBBCA9;margin-top:14px;max-width:620px}
+.cta .btn{border-color:var(--butter);color:var(--butter)}
+.cta .btn.solid{background:var(--butter);color:var(--cocoa)}
+
+dl.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:22px}
+dl.files a{display:block;background:var(--paper);border:1px solid rgba(58,42,30,.12);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);font-family:var(--cond);font-size:14px;letter-spacing:.06em}
+dl.files a span{display:block;font-family:var(--serif);font-size:13px;color:#7A6656;letter-spacing:0;margin-top:4px}
+footer{padding:44px 0 60px;border-top:1px solid rgba(58,42,30,.12)}
+footer .fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--cond);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A7660}
+@media(max-width:980px){.v-grid,.crit{grid-template-columns:1fr}.dist-row{grid-template-columns:1fr}nav{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <img src="assets/wordmark-gurman.svg" alt="Гурман">
+    <nav>
+      <a href="#variants">Варианты</a>
+      <a href="#distance">Дистанция</a>
+      <a href="#compare">Сравнение</a>
+      <a href="brandbook.html">Брендбук №1</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div class="label">Нови-Сад · сырники и сырки глазированные</div>
+  <h1 style="margin-top:18px">Три знака.<br><em>Одна полка.</em></h1>
+  <p>Первый знак — «стопка сырников» — издалека читался как эмодзи, и это подтвердили два человека. Значит, дело не в цвете, а в силуэте: мелкие формы складываются в картинку, которую мы не заказывали.</p>
+  <p style="margin-top:14px">Ниже три новых знака. Правила у всех одинаковые: <b>только крупные формы</b>, ничего не «стоится» и не «капает», один знак работает и на сырниках, и на сырках, палитра сохранена, «от Наиля» убрано — везде просто <b>Гурман</b>.</p>
+  <div class="cue">
+    <a class="btn solid" href="#variants">Смотреть три варианта</a>
+    <a class="btn" href="brandbook.html">Брендбук по варианту 1</a>
+  </div>
+</div>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="sec-h"><div class="num">01</div><h2>По каким правилам делали</h2></div>
+    <div class="crit">
+      <div><h4>Крупные формы</h4><p>Один-два больших элемента, ни одной крошки. Знак должен собираться в силуэт с 5 метров.</p></div>
+      <div><h4>Две линейки, один знак</h4><p>Сырники (круглые, 500 г) и сырки (прямоугольные, глазированные) выглядят как семья, а не как два разных бренда.</p></div>
+      <div><h4>Три вкуса сырков</h4><p>Шоколад, кокос, ваниль. Вкус кодируется цветом панели, знак не меняется — узнаваемость копится.</p></div>
+      <div><h4>Ничего лишнего</h4><p>Без «от Наиля» в брендинге, без мелких деталей, без стопок. Палитра — та, что понравилась.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="variants">
+  <div class="wrap">
+    <div class="sec-h"><div class="num">02</div><h2>Три варианта знака и дизайна</h2></div>
+
+    <!-- ===== ВАРИАНТ 1 ===== -->
+    <article class="variant">
+      <div class="v-head">
+        <div>
+          <h3>Вариант 1 · Монограмма «Г»</h3>
+          <div class="tag">Буква в вишнёвом круге · масляное кольцо</div>
+        </div>
+        <div class="v-badge">рекомендую · лучшая читаемость</div>
+      </div>
+
+      <div class="v-grid">
+        <div>
+          <div class="label" style="margin-bottom:14px">Четыре состояния</div>
+          <div class="states">
+            <figure><img src="assets/logo-v1.svg" alt=""><figcaption>Основной</figcaption></figure>
+            <figure class="onDark"><img src="assets/logo-v1-inverse.svg" alt=""><figcaption>На тёмном</figcaption></figure>
+            <figure><img src="assets/logo-v1-mono.svg" alt=""><figcaption>Моно</figcaption></figure>
+            <figure><img src="assets/logo-v1-outline.svg" alt=""><figcaption>Контур</figcaption></figure>
+          </div>
+          <img src="assets/logo-v1-lockup.svg" alt="Лок-ап" style="width:100%;max-width:520px;margin-top:26px;display:block">
+          <div class="label" style="margin-top:8px">Лок-ап: знак + словесный знак + подпись</div>
+        </div>
+        <div>
+          <ul class="pros">
+            <li><b>Читается всегда.</b> На 16–24 px не сливается: буква Г в круге — силуэт, который ни с чем не спутать.</li>
+            <li><b>Один знак на всю линейку.</b> На пачке — кремовая буква на вишне, на обёртке сырка — та же буква в углу.</li>
+            <li><b>Печатается дёшево.</b> Есть одноцветная и контурная версии: хоть на плёнке, хоть на крафте, хоть на штампе.</li>
+            <li><b>Имя и знак совпадают.</b> Логотип = первая буква бренда: покупателю не надо объяснять, что это.</li>
+            <li class="minus"><b>Риск:</b> буковка в круге — частый приём. Дистанцию от конкурентов даёт не знак, а подача: масляное кольцо, крупная буква и полка в трёх вкусах.</li>
+          </ul>
+                  </div>
+      </div>
+
+      <div class="label" style="margin-top:30px">На упаковке</div>
+      <div class="mocks">
+            <div class="pack">
+              <div class="top"><img src="assets/logo-v1.svg" alt=""></div>
+              <div class="band"></div>
+              <div class="badge">500 г<br>10 шт</div>
+              <div class="body">
+                <div class="name">ГУРМАН</div>
+                <div class="line">Сырники замороженные</div>
+                <div class="txt">Творог, яйцо, ваниль. Слеплено вручную, шоковая заморозка. Пять минут на среднем огне — и всё.</div>
+              </div>
+              <div class="foot"><span>−18 °C</span><span>Нови-Сад</span></div>
+            </div>
+            <div class="bars">
+              <div class="bar choc"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v1.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С шоколадом</span></div><div class="bp"><svg viewBox="0 0 120 120" fill="currentColor"><rect x="4" y="4" width="52" height="52" rx="9"/><rect x="64" y="4" width="52" height="52" rx="9"/><rect x="4" y="64" width="52" height="52" rx="9"/><rect x="64" y="64" width="52" height="52" rx="9"/></svg></div></div>
+              <div class="bar coco"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v1.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С кокосом</span></div><div class="bp"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="currentColor"/><circle cx="44" cy="46" r="10" fill="#C6A275"/><circle cx="60" cy="38" r="10" fill="#C6A275"/><circle cx="76" cy="46" r="10" fill="#C6A275"/></svg></div></div>
+              <div class="bar van"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v1.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С ванилью</span></div><div class="bp"><svg viewBox="0 0 120 120"><g transform="rotate(-32 60 60)"><rect x="44" y="8" width="32" height="104" rx="16" fill="currentColor"/><rect x="44" y="40" width="32" height="14" fill="#E8B33C"/></g></svg></div></div>
+            </div>
+          </div>
+      <div class="label" style="margin-top:32px">Симуляция полки</div>
+      <div class="shelf">
+        <div class="comp"></div>
+        <div class="comp"></div>
+        <div class="pack">
+          <div class="top"><img src="assets/logo-v1.svg" alt=""></div>
+          <div class="band"></div>
+          <div class="badge">500 г<br>10 шт</div>
+          <div class="body"><div class="name">ГУРМАН</div><div class="line">Сырники замороженные</div></div>
+          <div class="foot"><span>−18 °C</span><span>Нови-Сад</span></div>
+        </div>
+        <div class="bars">
+          <div class="bar choc"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v1.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С шоколадом</span></div><div class="bp"><svg viewBox="0 0 120 120" fill="currentColor"><rect x="4" y="4" width="52" height="52" rx="9"/><rect x="64" y="4" width="52" height="52" rx="9"/><rect x="4" y="64" width="52" height="52" rx="9"/><rect x="64" y="64" width="52" height="52" rx="9"/></svg></div></div>
+          <div class="bar coco"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v1.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С кокосом</span></div><div class="bp"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="currentColor"/><circle cx="44" cy="46" r="10" fill="#C6A275"/><circle cx="60" cy="38" r="10" fill="#C6A275"/><circle cx="76" cy="46" r="10" fill="#C6A275"/></svg></div></div>
+          <div class="bar van"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v1.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С ванилью</span></div><div class="bp"><svg viewBox="0 0 120 120"><g transform="rotate(-32 60 60)"><rect x="44" y="8" width="32" height="104" rx="16" fill="currentColor"/><rect x="44" y="40" width="32" height="14" fill="#E8B33C"/></g></svg></div></div>
+        </div>
+        <div class="comp"></div>
+      </div>
+          </article>
+
+    <!-- ===== ВАРИАНТ 2 ===== -->
+    <article class="variant">
+      <div class="v-head">
+        <div>
+          <h3>Вариант 2 · Глазурь</h3>
+          <div class="tag">Знак = сам продукт: брусок с толстой волной глазури</div>
+        </div>
+        <div class="v-badge" style="background:var(--butter-d)">самый «продуктовый»</div>
+      </div>
+
+      <div class="v-grid">
+        <div>
+          <div class="label" style="margin-bottom:14px">Состояния знака</div>
+          <div class="states">
+            <figure><img src="assets/logo-v2.svg" alt=""><figcaption>Основной</figcaption></figure>
+            <figure class="onDark"><img src="assets/logo-v2-inverse.svg" alt=""><figcaption>На тёмном</figcaption></figure>
+          </div>
+                  </div>
+        <div>
+          <ul class="pros">
+            <li><b>Знак = форма линейки.</b> Он в буквальном смысле про продукт: брусок с глазурью. Ничего объяснять не надо.</li>
+            <li><b>Работает на обеих линейках.</b> Брусок — это сырок; у сырников волна становится шапкой пачки, силуэт один.</li>
+            <li class="minus"><b>Риск:</b> на 16–24 px знак превращается в тёмное пятно — он «выставочный», требует места.</li>
+            <li class="minus"><b>Риск:</b> волну легко перепутать с иконкой «картинка/горы», если её сделать тоньше. Держим толстой.</li>
+            <li><b>Сильная сторона на полке:</b> на фоне серо-белых пачек конкурентов тёмный брусок с золотой волной замечаешь первым.</li>
+          </ul>
+        </div>
+      </div>
+            <div class="label" style="margin-top:30px">На упаковке</div>
+      <div class="mocks">
+            <div class="pack">
+              <div class="top" style="background:var(--cocoa)"><img src="assets/logo-v2.svg" alt="" style="width:104px"></div>
+              <div class="band"></div>
+              <div class="badge">500 г<br>10 шт</div>
+              <div class="body">
+                <div class="name">ГУРМАН</div>
+                <div class="line">Сырники замороженные</div>
+                <div class="txt">Творог, яйцо, ваниль. Шоковая заморозка. Волна глазури — обещание: внутри плотный творог, снаружи золотая корочка.</div>
+              </div>
+              <div class="foot"><span>−18 °C</span><span>Нови-Сад</span></div>
+            </div>
+<div class="bars">
+              <div class="bar choc"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v2.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С шоколадом</span></div><div class="bp"><svg viewBox="0 0 120 120" fill="currentColor"><rect x="4" y="4" width="52" height="52" rx="9"/><rect x="64" y="4" width="52" height="52" rx="9"/><rect x="4" y="64" width="52" height="52" rx="9"/><rect x="64" y="64" width="52" height="52" rx="9"/></svg></div></div>
+              <div class="bar coco"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v2.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С кокосом</span></div><div class="bp"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="currentColor"/><circle cx="44" cy="46" r="10" fill="#C6A275"/><circle cx="60" cy="38" r="10" fill="#C6A275"/><circle cx="76" cy="46" r="10" fill="#C6A275"/></svg></div></div>
+              <div class="bar van"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v2.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С ванилью</span></div><div class="bp"><svg viewBox="0 0 120 120"><g transform="rotate(-32 60 60)"><rect x="44" y="8" width="32" height="104" rx="16" fill="currentColor"/><rect x="44" y="40" width="32" height="14" fill="#E8B33C"/></g></svg></div></div>
+            </div>
+          </div>
+      <div class="label" style="margin-top:30px">Симуляция полки</div>
+      <div class="shelf">
+        <div class="comp"></div>
+        <div class="comp"></div>
+        <div class="pack">
+          <div class="top" style="background:var(--cocoa)"><img src="assets/logo-v2.svg" alt=""></div>
+          <div class="band"></div>
+          <div class="badge">500 г<br>10 шт</div>
+          <div class="body"><div class="name">ГУРМАН</div><div class="line">Сырники замороженные</div></div>
+          <div class="foot"><span>−18 °C</span><span>Нови-Сад</span></div>
+        </div>
+        <div class="bars">
+          <div class="bar choc"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v2.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С шоколадом</span></div><div class="bp"><svg viewBox="0 0 120 120" fill="currentColor"><rect x="4" y="4" width="52" height="52" rx="9"/><rect x="64" y="4" width="52" height="52" rx="9"/><rect x="4" y="64" width="52" height="52" rx="9"/><rect x="64" y="64" width="52" height="52" rx="9"/></svg></div></div>
+          <div class="bar coco"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v2.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С кокосом</span></div><div class="bp"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="currentColor"/><circle cx="44" cy="46" r="10" fill="#C6A275"/><circle cx="60" cy="38" r="10" fill="#C6A275"/><circle cx="76" cy="46" r="10" fill="#C6A275"/></svg></div></div>
+          <div class="bar van"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v2.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С ванилью</span></div><div class="bp"><svg viewBox="0 0 120 120"><g transform="rotate(-32 60 60)"><rect x="44" y="8" width="32" height="104" rx="16" fill="currentColor"/><rect x="44" y="40" width="32" height="14" fill="#E8B33C"/></g></svg></div></div>
+        </div>
+        <div class="comp"></div>
+      </div>
+    </article>
+
+    <!-- ===== ВАРИАНТ 3 ===== -->
+    <article class="variant">
+      <div class="v-head">
+        <div>
+          <h3>Вариант 3 · Клеймо-буква</h3>
+          <div class="tag">Одна крупная буква, без рамки и мелких деталей</div>
+        </div>
+        <div class="v-badge" style="background:var(--cocoa)">самый строгий</div>
+      </div>
+
+      <div class="v-grid">
+        <div>
+          <div class="label" style="margin-bottom:14px">Состояния знака</div>
+          <div class="states">
+            <figure><img src="assets/logo-v3.svg" alt=""><figcaption>Основной</figcaption></figure>
+            <figure class="onDark"><img src="assets/logo-v3-inverse.svg" alt=""><figcaption>На тёмном</figcaption></figure>
+            <figure><img src="assets/logo-v3-mono.svg" alt=""><figcaption>Моно</figcaption></figure>
+          </div>
+                  </div>
+        <div>
+          <ul class="pros">
+            <li><b>Строго и графично.</b> Знак выглядит как клеймо мастерской: ничего лишнего, только буква бренда.</li>
+            <li><b>Отлично литографируется.</b> Плоские формы без обводок — идеально для штампа, тиснения, трафарета на плёнке.</li>
+            <li class="minus"><b>Риск:</b> на 16 px буква читается хуже, чем вариант 1 — теряется угол.</li>
+            <li class="minus"><b>Риск:</b> у знака нет «продуктовой» подсказки — на полке его придётся продавать плашкой и цветом.</li>
+          </ul>
+        </div>
+      </div>
+            <div class="label" style="margin-top:30px">На упаковке</div>
+      <div class="mocks">
+            <div class="pack">
+              <div class="top" style="background:var(--butter)"><img src="assets/logo-v3.svg" alt="" style="width:92px"></div>
+              <div class="band" style="background:var(--cherry)"></div>
+              <div class="badge">500 г<br>10 шт</div>
+              <div class="body">
+                <div class="name">ГУРМАН</div>
+                <div class="line">Сырники замороженные</div>
+                <div class="txt">Буква как клеймо: минимум графики, максимум вкуса внутри. Творог, яйцо, ваниль.</div>
+              </div>
+              <div class="foot"><span>−18 °C</span><span>Нови-Сад</span></div>
+            </div>
+<div class="bars">
+              <div class="bar choc"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v3.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С шоколадом</span></div><div class="bp"><svg viewBox="0 0 120 120" fill="currentColor"><rect x="4" y="4" width="52" height="52" rx="9"/><rect x="64" y="4" width="52" height="52" rx="9"/><rect x="4" y="64" width="52" height="52" rx="9"/><rect x="64" y="64" width="52" height="52" rx="9"/></svg></div></div>
+              <div class="bar coco"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v3.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С кокосом</span></div><div class="bp"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="currentColor"/><circle cx="44" cy="46" r="10" fill="#C6A275"/><circle cx="60" cy="38" r="10" fill="#C6A275"/><circle cx="76" cy="46" r="10" fill="#C6A275"/></svg></div></div>
+              <div class="bar van"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v3.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С ванилью</span></div><div class="bp"><svg viewBox="0 0 120 120"><g transform="rotate(-32 60 60)"><rect x="44" y="8" width="32" height="104" rx="16" fill="currentColor"/><rect x="44" y="40" width="32" height="14" fill="#E8B33C"/></g></svg></div></div>
+            </div>
+          </div>
+      <div class="label" style="margin-top:30px">Симуляция полки</div>
+      <div class="shelf">
+        <div class="comp"></div>
+        <div class="comp"></div>
+        <div class="pack">
+          <div class="top" style="background:var(--butter)"><img src="assets/logo-v3.svg" alt=""></div>
+          <div class="band" style="background:var(--cherry)"></div>
+          <div class="badge">500 г<br>10 шт</div>
+          <div class="body"><div class="name">ГУРМАН</div><div class="line">Сырники замороженные</div></div>
+          <div class="foot"><span>−18 °C</span><span>Нови-Сад</span></div>
+        </div>
+        <div class="bars">
+          <div class="bar choc"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v3.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С шоколадом</span></div><div class="bp"><svg viewBox="0 0 120 120" fill="currentColor"><rect x="4" y="4" width="52" height="52" rx="9"/><rect x="64" y="4" width="52" height="52" rx="9"/><rect x="4" y="64" width="52" height="52" rx="9"/><rect x="64" y="64" width="52" height="52" rx="9"/></svg></div></div>
+          <div class="bar coco"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v3.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С кокосом</span></div><div class="bp"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="currentColor"/><circle cx="44" cy="46" r="10" fill="#C6A275"/><circle cx="60" cy="38" r="10" fill="#C6A275"/><circle cx="76" cy="46" r="10" fill="#C6A275"/></svg></div></div>
+          <div class="bar van"><div class="bl"><div class="bl-row"><img class="mk" src="assets/logo-v3.svg" alt=""><span class="bn">ГУРМАН</span></div><span class="bf">С ванилью</span></div><div class="bp"><svg viewBox="0 0 120 120"><g transform="rotate(-32 60 60)"><rect x="44" y="8" width="32" height="104" rx="16" fill="currentColor"/><rect x="44" y="40" width="32" height="14" fill="#E8B33C"/></g></svg></div></div>
+        </div>
+        <div class="comp"></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="distance">
+  <div class="wrap">
+    <div class="sec-h"><div class="num">03</div><h2>Тест на дистанцию</h2></div>
+    <p style="max-width:760px;margin-bottom:24px">Нижняя строка в каждом блоке — то, как знак выглядит <b>с 3–5 метров</b>. Знак должен читаться уже на 24 px: иначе на дальней полке морозилки останется цветное пятно без бренда.</p>
+    <div class="dist">
+      <div class="dist-row">
+        <div class="who"><b>Вариант 1 · Монограмма</b><small>Буква в круге — держится на всех размерах</small></div>
+        <div class="sizes">
+          <figure><img src="assets/logo-v1.svg" width="120" alt=""><figcaption>120</figcaption></figure>
+          <figure><img src="assets/logo-v1.svg" width="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="assets/logo-v1.svg" width="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="assets/logo-v1.svg" width="24" alt=""><figcaption>24</figcaption></figure>
+          <figure><img src="assets/logo-v1.svg" width="16" alt=""><figcaption>16</figcaption></figure>
+        </div>
+      </div>
+      <div class="dist-row">
+        <div class="who"><b>Вариант 2 · Глазурь</b><small>Красив, но требует места: на 24 px — пятно</small></div>
+        <div class="sizes">
+          <figure><img src="assets/logo-v2.svg" width="120" alt=""><figcaption>120</figcaption></figure>
+          <figure><img src="assets/logo-v2.svg" width="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="assets/logo-v2.svg" width="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="assets/logo-v2.svg" width="24" alt=""><figcaption>24</figcaption></figure>
+          <figure><img src="assets/logo-v2.svg" width="16" alt=""><figcaption>16</figcaption></figure>
+        </div>
+      </div>
+      <div class="dist-row">
+        <div class="who"><b>Вариант 3 · Клеймо</b><small>Плоский и чёткий, на 16 px спорный</small></div>
+        <div class="sizes">
+          <figure><img src="assets/logo-v3.svg" width="120" alt=""><figcaption>120</figcaption></figure>
+          <figure><img src="assets/logo-v3.svg" width="64" alt=""><figcaption>64</figcaption></figure>
+          <figure><img src="assets/logo-v3.svg" width="40" alt=""><figcaption>40</figcaption></figure>
+          <figure><img src="assets/logo-v3.svg" width="24" alt=""><figcaption>24</figcaption></figure>
+          <figure><img src="assets/logo-v3.svg" width="16" alt=""><figcaption>16</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-h"><div class="num">04</div><h2>Сравнение</h2></div>
+    <table>
+      <thead><tr><th>Критерий</th><th>1 · Монограмма</th><th>2 · Глазурь</th><th>3 · Клеймо</th></tr></thead>
+      <tbody>
+        <tr><td><b>Читаемость на 24 px</b></td><td>Отличная</td><td>Слабая</td><td>Средняя</td></tr>
+        <tr><td><b>Понятность без подписи</b></td><td>Буква бренда — сразу ясно</td><td>Понятно, что продукт, но какой — нет</td><td>Буква бренда, но сухо</td></tr>
+        <tr><td><b>Связка «сырники + сырки»</b></td><td>Один знак, разные плашки</td><td>Знак роднят обе линейки</td><td>Один знак, разный цвет</td></tr>
+        <tr><td><b>Стоп-эффект на полке</b></td><td>Сильный за счёт цвета</td><td>Самый сильный</td><td>Средний</td></tr>
+        <tr><td><b>Стоимость печати</b></td><td>Есть моно и контур</td><td>Нужны 2 цвета</td><td>Одна краска</td></tr>
+        <tr><td><b>Риск «узнали не то»</b></td><td>Низкий</td><td>Средний (иконка)</td><td>Низкий</td></tr>
+        <tr><td><b>Готовность к брендбуку</b></td><td>Система собрана: 4 состояния, лок-ап, правила</td><td>Нужны доработки волны</td><td>Нужна система носителей</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="choise">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Брендбук собран по варианту 1</h2>
+        <p>Первый вариант даёт самую понятную связку: имя = знак, знак = круг+буква, который держится на любом размере. Полный брендбук — построение знака, палитра, типографика, правила, носители и диелайны упаковки.</p>
+      </div>
+      <a class="btn solid" href="brandbook.html">Открыть брендбук →</a>
+    </div>
+
+    <div class="sec-h" style="margin-top:56px"><div class="num">05</div><h2>Файлы знаков</h2></div>
+    <p style="max-width:700px">Все знаки — векторные (SVG): буквы и слова переведены в кривые, шрифты не нужны. Скачай и посмотри на реальных носителях и в печати.</p>
+    <dl class="files">
+      <a href="assets/logo-v1.svg">Вариант 1 · основной<span>logo-v1.svg</span></a>
+      <a href="assets/logo-v1-inverse.svg">Вариант 1 · на тёмном<span>logo-v1-inverse.svg</span></a>
+      <a href="assets/logo-v1-mono.svg">Вариант 1 · моно<span>logo-v1-mono.svg</span></a>
+      <a href="assets/logo-v1-outline.svg">Вариант 1 · контур<span>logo-v1-outline.svg</span></a>
+      <a href="assets/logo-v1-lockup.svg">Вариант 1 · лок-ап<span>logo-v1-lockup.svg</span></a>
+      <a href="assets/logo-v1-lockup-dark.svg">Вариант 1 · лок-ап на тёмном<span>logo-v1-lockup-dark.svg</span></a>
+      <a href="assets/logo-v2.svg">Вариант 2 · основной<span>logo-v2.svg</span></a>
+      <a href="assets/logo-v2-inverse.svg">Вариант 2 · на тёмном<span>logo-v2-inverse.svg</span></a>
+      <a href="assets/logo-v3.svg">Вариант 3 · основной<span>logo-v3.svg</span></a>
+      <a href="assets/logo-v3-inverse.svg">Вариант 3 · на тёмном<span>logo-v3-inverse.svg</span></a>
+      <a href="assets/logo-v3-mono.svg">Вариант 3 · моно<span>logo-v3-mono.svg</span></a>
+      <a href="assets/wordmark-gurman.svg">Словесный знак<span>wordmark-gurman.svg</span></a>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fg">
+    <div>Гурман · сырники и сырки глазированные</div>
+    <div>Производство Нови-Сад · 2026</div>
+  </div>
+</footer>
+</body>
+</html>
