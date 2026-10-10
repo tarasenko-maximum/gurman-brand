@@ -143,6 +143,35 @@ dl.files a span{display:block;font-family:var(--serif);font-size:13px;color:#7A6
 footer{padding:44px 0 60px;border-top:1px solid rgba(58,42,30,.12)}
 footer .fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--cond);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A7660}
 @media(max-width:980px){.v-grid,.crit{grid-template-columns:1fr}.dist-row{grid-template-columns:1fr}nav{display:none}}
+
+/* ── мобильные правки ── */
+html,body{overflow-x:hidden}
+img,svg,table{max-width:100%}
+@media(max-width:980px){
+  .v-grid,.crit,.dist-row,.grid2,.grid3,.grid4,.dl-grid,.media,.type-row{grid-template-columns:minmax(0,1fr)}
+  .type-row{gap:6px}
+}
+@media(max-width:760px){
+  .wrap{padding:0 18px}
+  h1{font-size:clamp(29px,8.6vw,44px)}
+  .mocks{flex-direction:column;align-items:stretch}
+  .mocks .pack{width:100%;max-width:300px;margin:0 auto}
+  .mocks .bars{min-width:0;width:100%}
+  .mocks .bar{width:100%;max-width:100%}
+  .mocks .bar .bl,.mocks .bar .bp{min-width:0}
+  .shelf{justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:22px 18px 34px}
+  .shelf>*{flex:0 0 auto}
+  .shelf .comp{display:none}
+  .type-row .demo{font-size:26px;letter-spacing:0;overflow-wrap:anywhere}
+  .card{padding:20px}
+  section{padding:40px 0}
+  .cmp{font-size:12.5px}
+  .cmp th,.cmp td{padding:8px 6px}
+  .pkg{flex-direction:column}
+  .pane,.sheet,.flo,.box,.openbox,.box.w330{width:100%}
+  .grid2,.grid3{gap:16px}
+}
+
 </style>
 </head>
 <body>
@@ -154,7 +183,8 @@ footer .fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;fo
       <a href="#variants">Варианты</a>
       <a href="#distance">Дистанция</a>
       <a href="#compare">Сравнение</a>
-      <a href="brandbook.html">Брендбук №1</a>
+      <a href="brandbook.html">Брендбук</a>
+      <a href="packaging.html">Упаковка</a>
     </nav>
   </div>
 </header>
@@ -162,11 +192,12 @@ footer .fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;fo
 <div class="wrap hero">
   <div class="label">Нови-Сад · сырники и сырки глазированные</div>
   <h1 style="margin-top:18px">Три знака.<br><em>Одна полка.</em></h1>
-  <p>Первый знак — «стопка сырников» — издалека читался как эмодзи, и это подтвердили два человека. Значит, дело не в цвете, а в силуэте: мелкие формы складываются в картинку, которую мы не заказывали.</p>
-  <p style="margin-top:14px">Ниже три новых знака. Правила у всех одинаковые: <b>только крупные формы</b>, ничего не «стоится» и не «капает», один знак работает и на сырниках, и на сырках, палитра сохранена, «от Наиля» убрано — везде просто <b>Гурман</b>.</p>
+  <p>Наш продукт держится на одной форме: круг — у сырника и у медальона сырка. Поэтому знак собран из крупных форм — вишнёвая плашка во всю ширину пачки и буква <b>Г</b> в масляном кольце. Такое видно в морозилке, где всё серо-белое, и одинаково работает на пачке 500 г и на обёртке 50 г.</p>
+  <p style="margin-top:14px">Три направления ниже отличаются только рисунком одной и той же идеи. Правила у всех общие: <b>только крупные формы</b>, ничего мелкого и дробного, один знак на обе линейки, сохранённая палитра — и везде просто <b>Гурман</b>, без приписок.</p>
   <div class="cue">
     <a class="btn solid" href="#variants">Смотреть три варианта</a>
-    <a class="btn" href="brandbook.html">Брендбук по варианту 1</a>
+    <a class="btn" href="brandbook.html">Открыть брендбук</a>
+    <a class="btn" href="packaging.html">Упаковка для магазина</a>
   </div>
 </div>
 
@@ -455,7 +486,7 @@ footer .fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;fo
   <div class="wrap">
     <div class="cta">
       <div>
-        <h2>Брендбук собран по варианту 1</h2>
+        <h2>Брендбук и упаковка</h2>
         <p>Первый вариант даёт самую понятную связку: имя = знак, знак = круг+буква, который держится на любом размере. Полный брендбук — построение знака, палитра, типографика, правила, носители и диелайны упаковки.</p>
       </div>
       <a class="btn solid" href="brandbook.html">Открыть брендбук →</a>
@@ -464,12 +495,12 @@ footer .fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;fo
     <div class="sec-h" style="margin-top:56px"><div class="num">05</div><h2>Файлы знаков</h2></div>
     <p style="max-width:700px">Все знаки — векторные (SVG): буквы и слова переведены в кривые, шрифты не нужны. Скачай и посмотри на реальных носителях и в печати.</p>
     <dl class="files">
-      <a href="assets/logo-v1.svg">Вариант 1 · основной<span>logo-v1.svg</span></a>
-      <a href="assets/logo-v1-inverse.svg">Вариант 1 · на тёмном<span>logo-v1-inverse.svg</span></a>
-      <a href="assets/logo-v1-mono.svg">Вариант 1 · моно<span>logo-v1-mono.svg</span></a>
-      <a href="assets/logo-v1-outline.svg">Вариант 1 · контур<span>logo-v1-outline.svg</span></a>
-      <a href="assets/logo-v1-lockup.svg">Вариант 1 · лок-ап<span>logo-v1-lockup.svg</span></a>
-      <a href="assets/logo-v1-lockup-dark.svg">Вариант 1 · лок-ап на тёмном<span>logo-v1-lockup-dark.svg</span></a>
+      <a href="assets/logo-v1.svg">Основной знак<span>logo-v1.svg</span></a>
+      <a href="assets/logo-v1-inverse.svg">Знак на тёмном<span>logo-v1-inverse.svg</span></a>
+      <a href="assets/logo-v1-mono.svg">Моно<span>logo-v1-mono.svg</span></a>
+      <a href="assets/logo-v1-outline.svg">Контур<span>logo-v1-outline.svg</span></a>
+      <a href="assets/logo-v1-lockup.svg">Лок-ап<span>logo-v1-lockup.svg</span></a>
+      <a href="assets/logo-v1-lockup-dark.svg">Лок-ап на тёмном<span>logo-v1-lockup-dark.svg</span></a>
       <a href="assets/logo-v2.svg">Вариант 2 · основной<span>logo-v2.svg</span></a>
       <a href="assets/logo-v2-inverse.svg">Вариант 2 · на тёмном<span>logo-v2-inverse.svg</span></a>
       <a href="assets/logo-v3.svg">Вариант 3 · основной<span>logo-v3.svg</span></a>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Гурман — брендбук (вариант 1, монограмма «Г»)</title>
+<title>Гурман — брендбук</title>
 <meta name="description" content="Брендбук «Гурман»: знак, построение, цвет, типографика, упаковка, носители, правила.">
 <link rel="icon" href="assets/logo-v1.svg">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Oswald:wght@400;500;600;700&family=Bitter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -148,6 +148,35 @@ dl.files a span{display:block;font-family:var(--serif);font-size:13px;color:#7A6
 footer{padding:40px 0 64px;border-top:1px solid rgba(58,42,30,.12)}
 footer .fg{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-family:var(--cond);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A7660}
 @media(max-width:980px){.grid2,.grid3,.grid4,.dl-grid,.media{grid-template-columns:1fr}.type-row{grid-template-columns:1fr;gap:8px}nav{display:none}}
+
+/* ── мобильные правки ── */
+html,body{overflow-x:hidden}
+img,svg,table{max-width:100%}
+@media(max-width:980px){
+  .v-grid,.crit,.dist-row,.grid2,.grid3,.grid4,.dl-grid,.media,.type-row{grid-template-columns:minmax(0,1fr)}
+  .type-row{gap:6px}
+}
+@media(max-width:760px){
+  .wrap{padding:0 18px}
+  h1{font-size:clamp(29px,8.6vw,44px)}
+  .mocks{flex-direction:column;align-items:stretch}
+  .mocks .pack{width:100%;max-width:300px;margin:0 auto}
+  .mocks .bars{min-width:0;width:100%}
+  .mocks .bar{width:100%;max-width:100%}
+  .mocks .bar .bl,.mocks .bar .bp{min-width:0}
+  .shelf{justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:22px 18px 34px}
+  .shelf>*{flex:0 0 auto}
+  .shelf .comp{display:none}
+  .type-row .demo{font-size:26px;letter-spacing:0;overflow-wrap:anywhere}
+  .card{padding:20px}
+  section{padding:40px 0}
+  .cmp{font-size:12.5px}
+  .cmp th,.cmp td{padding:8px 6px}
+  .pkg{flex-direction:column}
+  .pane,.sheet,.flo,.box,.openbox,.box.w330{width:100%}
+  .grid2,.grid3{gap:16px}
+}
+
 </style>
 </head>
 <body>
@@ -156,8 +185,14 @@ footer .fg{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;fo
   <div class="wrap hd">
     <img src="assets/logo-v1-lockup.svg" alt="Гурман">
     <nav>
-      <a href="#idea">Идея</a><a href="#build">Построение</a><a href="#color">Цвет</a>
-      <a href="#type">Шрифты</a><a href="#pack">Упаковка</a><a href="#media">Носители</a><a href="#rules">Правила</a><a href="index.html">← Варианты</a>
+      <a href="#idea">Идея</a>
+      <a href="#build">Построение</a>
+      <a href="#color">Цвет</a>
+      <a href="#type">Шрифты</a>
+      <a href="#pack">Упаковка</a>
+      <a href="#rules">Правила</a>
+      <a href="packaging.html">Макеты для магазина</a>
+      <a href="index.html">← Варианты</a>
     </nav>
   </div>
 </header>
@@ -166,7 +201,7 @@ footer .fg{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;fo
   <div class="stripe"></div>
   <div class="wrap grid">
     <div>
-      <div class="label">Брендбук · версия 1.0 · вариант 1</div>
+      <div class="label">Брендбук · версия 1.0</div>
       <h1 style="margin-top:14px">ГУРМАН</h1>
       <div class="sub">Сырники · Сырки глазированные · Нови-Сад</div>
       <div class="v">Монограмма «Г» · производство Нови-Сад · 2026</div>
@@ -180,18 +215,28 @@ footer .fg{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;fo
     <div class="sec-h"><div class="num">01</div><h2>Идея знака</h2></div>
     <div class="grid2">
       <div>
-        <p class="lead">Знак — это буква <b>Г</b> на круглом диске с масляным кольцом. Три больших элемента, ни одной мелкой детали: буква, круг, кольцо. Собрано так, чтобы читалось и на пачке в руке, и на ценнике, и с другого конца морозилки.</p>
+        <p class="lead">Знак — буква <b>Г</b> на круглом диске с масляным кольцом. Три крупных элемента и ни одной мелкой детали: буква, круг, кольцо. Такое собирается в одно пятно и читается в любом размере — от ценника в морозилке до вывески.</p>
         <ul class="tick">
-          <li><b>Круг</b> — сырник и общая форма бренда: ровный, плотный, тёплый. Круг читается как «сыр» и как «свой круг своих».</li>
-          <li><b>Буква Г</b> — имя. Покупателю не нужно объяснять, что за бренд: он видит первую букву названия.</li>
-          <li><b>Масляное кольцо</b> — румяная корочка и глазурь. Оно же делает знак узнаваемым даже одноцветным.</li>
+          <li><b>Круг</b> — форма самого продукта. Сырник круглый, сырок — круглый медальон под глазурью. Знак повторяет силуэт того, что лежит внутри, поэтому упаковка и продукт совпадают.</li>
+          <li><b>Буква Г</b> — имя. Покупателю не нужно запоминать логотип: первую букву названия он прочитает раньше всего остального, и слово «Гурман» дочитывается само.</li>
+          <li><b>Масляное кольцо</b> — румяная корочка сырника и глазурь сырка. Оно же делает знак узнаваемым даже в одну краску — там, где цветная печать недоступна.</li>
         </ul>
-        <p style="margin-top:18px"><b>Чего в знаке принципиально нет:</b> стопок, крошек, точек, вишен и прочих мелких элементов. Именно они превращали прежний силуэт во что-то постороннее. Знак должен собираться в одно пятно, а не в картинку.</p>
+        <h3 style="margin-top:28px;font-size:23px">Почему это подходит именно нашей продукции</h3>
+        <ul class="tick" style="margin-top:14px">
+          <li><b>Форма продукта = форма знака.</b> Круг на пачке сырников — не абстрактный щит, а тот же круг, который покупатель увидит на сковороде. Объяснять словами нечего: совпадение видно сразу.</li>
+          <li><b>Работает на две линейки одной формой.</b> Сырники 500 г и сырки 50 г различаются размером, вкусом и местом на полке — но не знаком. Полка читается как одна семья, а не как два разных производителя.</li>
+          <li><b>Держится на мелком размере.</b> Обёртка сырка — 95 × 60 мм, знак на ней около 20 мм. Буква в круге остаётся читаемой даже на 16 px, где сложные знаки превращаются в тёмное пятно: это проверено тестом на дистанции.</li>
+          <li><b>Видно в морозилке.</b> Вишнёвая плашка во всю ширину пачки — единственное цветное пятно среди серо-белых соседей. Покупатель находит бренд глазами, а не чтением состава.</li>
+          <li><b>Дешёво и стабильно в печати.</b> Три плашки, четыре краски, без растра и градиентов: одинаково ровно ложится и на дешёвый картон, и на металлизированную плёнку, и не «портится» при тираже.</li>
+          <li><b>Не спорит с продуктом.</b> Творог, яйцо, ваниль, ручная лепка — это про тёплое и простое. Круглая форма и масляный цвет говорят то же самое, поэтому упаковка честная, а не «дизайнерская».</li>
+        </ul>
+        <p style="margin-top:18px"><b>Чего в знаке принципиально нет:</b> стопок, крошек, точек, вишен и прочих мелких элементов. Именно они превращали прежний силуэт в посторонний предмет. Знак должен собираться в одно пятно, а не в картинку.</p>
+        <div class="rowline" style="margin-top:22px"><a class="btn solid" href="packaging.html">Упаковка для магазина</a><a class="btn" href="index.html">Три направления знака</a></div>
       </div>
       <div class="card">
         <div class="label" style="margin-bottom:14px">Один знак — две линейки</div>
         <img src="assets/logo-v1-lockup.svg" alt="Лок-ап" style="width:100%;display:block">
-        <div class="mini-note">Сырники: буква кремовая на вишнёвой плашке. Сырки: та же буква на светлой обёртке, вкус кодирует цветная панель. Знак не переделывается под вкус — иначе бренд рассыпается на четыре разных.</div>
+        <div class="mini-note">Сырники: кремовая буква на вишнёвой плашке. Сырки: та же буква на светлой обёртке, вкус кодирует цветная панель. Знак не переделывается под вкус — иначе бренд рассыпается на четыре разных.</div>
       </div>
     </div>
   </div>
@@ -453,7 +498,7 @@ footer .fg{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;fo
 
 <footer>
   <div class="wrap fg">
-    <div>Брендбук «Гурман» · версия 1.0 · вариант 1</div>
+    <div>Брендбук «Гурман» · версия 1.0</div>
     <div>Производство Нови-Сад · 2026</div>
   </div>
 </footer>
